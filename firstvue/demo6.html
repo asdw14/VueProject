@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <dzd v-for="item in items" v-bind:title="item"></dzd>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script>
+    window.onload = function () {
+        Vue.component("dzd",{
+            props:['title'],
+            template: "<li>{{title}}</li>"
+        })
+        var vm =new Vue({
+            el: "#app",
+            data:{
+                items: ["asd","asffffffds0","afkafkfasnfasas"]
+            },
+            methods: {
+            }
+        });
+    }
+
+</script>
+</body>
+</html>
