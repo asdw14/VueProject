@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+<div id="vue">
+    <div>{{info}}</div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+    window.onload = function () {
+        new Vue({
+            el: "#vue",
+            data() {
+                return{
+                    info:null
+                }
+
+            },
+            mounted(){
+                axios.get('../data.json').then(response=>(this.info = cresponse.data))
+            }
+            });
+    }
+
+</script>
+</body>
+</html>
